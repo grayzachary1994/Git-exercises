@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "js-assignment-4-html-me-something-grayzachary1994",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test - js-assignment-4-html-me-something-grayzachary1994",
+			"detail": "jasmine"
+		}
+	]
+}
