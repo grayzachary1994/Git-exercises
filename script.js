@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// TODO: add code here
-=======
 // Write your JavaScript code here!
 
 window.addEventListener("load", function() {
@@ -17,4 +14,3 @@ window.addEventListener("load", function() {
    })
    
 });
->>>>>>> 6487dac4d1e3e929b1578594046ddc9b23efa80f

@@ -1,5 +1,15 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
+let pilotNameInput = document.querySelector("input[name=pilotName");
+let copilotNameInput = document.querySelector("input[name=copilotName]");
+let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
+let cargoMassInput = document.querySelector("input[name=cargoMass]");
+let pilotStatus = document.getElementById("pilotStatus");
+let copilotStatus = document.getElementById("copilotStatus");
+let fuelStatus = document.getElementById("fuelStatus");
+let cargoStatus = document.getElementById("cargoStatus");
+
+
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -17,40 +27,52 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-    let pilotName = document.querySelector("input[name=pilotName");
-    let copilotName = document.querySelector("input[name=copilotName]");
-    let fuelLevel = document.querySelector("input[name=fuelLevel]");
-    let cargoMass = document.querySelector("input[name=cargoMass]");
-    if(pilotName===""){
+    if(testInput === ""){
+        alert("All fields are required!");
+        return console.log("Empty");
+    }
+    else if(isNaN(testInput)){
+        return console.log("Not a Number")
+    }
+    else if(!(isNan(testInput))){
+        return console.log("Is a Number")
+    }
+}
+
+console.log(validateInput("10"))
+console.log(validateInput("ten"))
+console.log(validateInput(""))
+    
+    
+    
+    
+    
+    /*if(pilotNameInput===""){
         alert("All Fields are required!")
-        event.preventDefault();
         return "Empty"
     }
-    else if(copilotName ===""){
+    else if(copilotNameInput ===""){
         alert("All Fields are required!")
-        event.preventDefault();
         return "Empty"
     }
-    else if(isNaN(fuelLevel)){
+    else if(isNaN(fuelLevelInput)){
         alert("All Fields are required!")
-        event.preventDefault();
         return "Not a Number"
     }
-    else if(isNan(cargoMass)){
+    else if(isNan(cargoMassInput)){
         alert("All Fields are required!")
-        event.preventDefault();
         return "Not a Number"
     }
     else{
          return
     }
-}
+}*/
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   let form = document.querySelector("launchForm");
-        form.addEventListener("submit", function(){
-
-        })
+    pilotNameInput.addEventListener('input',function(){
+        pilotStatus.innerHTML = pilotNameInput.Value;
+    })
     }
 
 async function myFetch() {
