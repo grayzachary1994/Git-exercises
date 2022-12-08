@@ -6,7 +6,7 @@ require('isomorphic-fetch');
 
 
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, image) {
+function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
     let missionTarget = document.getElementById("missionTarget");
     missionTarget.innerHTML = `<h2>Mission Destination</h2>
@@ -17,7 +17,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
         <li>Distance from Earth: ${distance}</li>
         <li>Number of Moons: ${moons}</li>
     </ol>
-    <img src="${image}">`
+    <img src="${imageUrl}">`
     
 }
 
@@ -45,19 +45,19 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
 
-    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch.`;
-    copilotStatus.innerHTML = `Pilot ${copilot} is ready for launch.`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+    copilotStatus.innerHTML = `Pilot ${copilot} is ready for launch`;
 
     if(fuelLevelInput.value<10000){
         fuelStatus.innerHTML = "Fuel level too low for launch"
-        launchStatus.innerHTML = "Shuttle not ready for launch."
+        launchStatus.innerHTML = "Shuttle is not ready for Launch"
         launchStatus.style.color = "red";
         list.style.visibility = "visible";
         return;
     } else if(cargoMassInput.value>10000){
         list.style.visibility = "visible";
         cargoStatus.innerHTML = "Cargo mass too heavy for launch"
-        launchStatus.innerHTML = "Shuttle not ready for launch"
+        launchStatus.innerHTML = "Shuttle is not ready for Launch"
         launchStatus.style.color = "red";
         return;
     } else{
