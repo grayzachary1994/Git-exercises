@@ -35,34 +35,34 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let pilotName = document.querySelector("input[name=pilotName");
-    let copilotName = document.querySelector("input[name=copilotName]");
-    let fuelLevel = document.querySelector("input[name=fuelLevel]");
-    let cargoMass = document.querySelector("input[name=cargoMass]");
+    let pilotNameInput = document.querySelector("input[name=pilotName");
+    let copilotNameInput = document.querySelector("input[name=copilotName]");
+    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
+    let cargoMassInput = document.querySelector("input[name=cargoMass]");
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
     let fuelStatus = document.getElementById("fuelStatus");
     let cargoStatus = document.getElementById("cargoStatus");
     let launchStatus = document.getElementById("launchStatus");
-    list.style.visibility = "hidden";
 
+    list.style.visibility = "hidden";
     pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
     copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
-    if(fuelLevel.value<10000){
+    if(fuelLevelInput.value<10000){
         fuelStatus.innerHTML = "Fuel level too low for launch"
         cargoStatus.innerHTML = "Cargo mass low enough for launch"
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
-        return;
-    } else if(cargoMass.value>10000){
+
+    } else if(cargoMassInput.value>10000){
         fuelStatus.innerHTML = "Fuel level high enough for launch"
         cargoStatus.innerHTML = "Cargo mass too heavy for launch"
         launchStatus.innerHTML = "Shuttle Not Ready for Launch"
         launchStatus.style.color = "rgb(199, 37, 78)";
         list.style.visibility = "visible";
-        return;
+        
     } else{
         cargoStatus.innerHTML = "Cargo mass low enough for launch"
         fuelStatus.innerHTML = "Fuel level high enough for launch"
